@@ -50,10 +50,17 @@ class ViewController: UIViewController {
 
 		var previous: UILabel?
 
+		var labelHeight: CGFloat {
+			let viewHeight: CGFloat = 500
+			let height: CGFloat = viewHeight/5 - 10
+
+			return height
+		}
+
 		for label in [label1, label2, label3, label4, label5] {
 			label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
 			label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-			label.heightAnchor.constraint(equalToConstant: 88).isActive = true
+			label.heightAnchor.constraint(equalToConstant: labelHeight).isActive = true
 
 			if let previous = previous {
 				label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
